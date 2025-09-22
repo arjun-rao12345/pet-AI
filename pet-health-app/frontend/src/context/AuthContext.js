@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
     if (token) {
       setAuthToken(token);
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/me');
+        const res = await axios.get('https://pet-ai-chbi.onrender.com/api/auth/me');
         dispatch({
           type: 'USER_LOADED',
           payload: res.data.user,
@@ -88,7 +88,7 @@ export const AuthProvider = ({ children }) => {
   // Register user
   const register = async (formData) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://pet-ai-chbi.onrender.com/api/auth/register', formData);
       dispatch({
         type: 'REGISTER_SUCCESS',
         payload: res.data,
@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }) => {
   // Login user
   const login = async (formData) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post('https://pet-ai-chbi.onrender.com/api/auth/login', formData);
       
       // Set the token immediately
       localStorage.setItem('token', res.data.token);
