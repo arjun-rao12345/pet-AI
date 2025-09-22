@@ -395,7 +395,7 @@ const Chat = () => {
 
   const loadChatHistory = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/chat/history/${petId}`, {
+      const response = await axios.get(`https://pet-ai-chbi.onrender.com/api/chat/history/${petId}`, {
         params: { sessionId }
       });
       setMessages(response.data.messages || []);
@@ -436,7 +436,7 @@ const Chat = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/chat/message', {
+      const response = await axios.post('https://pet-ai-chbi.onrender.com/api/chat/message', {
         message: inputMessage.trim(),
         petId,
         sessionId
@@ -548,14 +548,14 @@ const Chat = () => {
         formData.append('sessionId', sessionId);
         formData.append('image', imageFile);
 
-        response = await axios.post('http://localhost:5000/api/chat/message-with-image', formData, {
+        response = await axios.post('https://pet-ai-chbi.onrender.com/api/chat/message-with-image', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
       } else {
         // Send text-only message
-        response = await axios.post('http://localhost:5000/api/chat/message', {
+        response = await axios.post('https://pet-ai-chbi.onrender.com/api/chat/message', {
           message: messageText,
           petId,
           sessionId
