@@ -76,7 +76,7 @@ export const PetProvider = ({ children }) => {
   const getPets = async () => {
     try {
       dispatch({ type: 'SET_LOADING' });
-      const res = await axios.get('http://localhost:5000/api/pets');
+      const res = await axios.get('https://pet-ai-chbi.onrender.com/api/pets');
       dispatch({
         type: 'GET_PETS',
         payload: res.data,
@@ -93,7 +93,7 @@ export const PetProvider = ({ children }) => {
   const addPet = async (petData) => {
     try {
       dispatch({ type: 'SET_LOADING' });
-      const res = await axios.post('http://localhost:5000/api/pets', petData);
+      const res = await axios.post('https://pet-ai-chbi.onrender.com/api/pets', petData);
       dispatch({
         type: 'ADD_PET',
         payload: res.data.pet,
@@ -110,7 +110,7 @@ export const PetProvider = ({ children }) => {
   const updatePet = async (id, petData) => {
     try {
       dispatch({ type: 'SET_LOADING' });
-      const res = await axios.put(`http://localhost:5000/api/pets/${id}`, petData);
+      const res = await axios.put(`https://pet-ai-chbi.onrender.com/api/pets/${id}`, petData);
       dispatch({
         type: 'UPDATE_PET',
         payload: res.data.pet,
@@ -127,7 +127,7 @@ export const PetProvider = ({ children }) => {
   const deletePet = async (id) => {
     try {
       dispatch({ type: 'SET_LOADING' });
-      await axios.delete(`http://localhost:5000/api/pets/${id}`);
+      await axios.delete(`https://pet-ai-chbi.onrender.com/api/pets/${id}`);
       dispatch({
         type: 'DELETE_PET',
         payload: id,
