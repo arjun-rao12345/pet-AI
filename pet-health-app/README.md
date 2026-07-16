@@ -9,7 +9,7 @@ A comprehensive MERN stack application for pet health management with AI-powered
 - JWT-based authentication
 - Protected routes and user sessions
 
-### 🐕 Pet Management
+### 🐕 Pet Management App
 - Add multiple pets per user account
 - Detailed pet profiles (name, type, breed, age, weight, gender)
 - Edit and update pet information
